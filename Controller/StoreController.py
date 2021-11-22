@@ -1,4 +1,6 @@
+
+#manages store front
 class StoreController:
 
-    def ItemSelected():
-        pass
+    def goToItemPage(item):
+        return

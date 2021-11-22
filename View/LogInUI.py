@@ -1,10 +1,12 @@
 
 import tkinter as tk
 from tkinter.constants import SOLID, W
+from Controller.LogInController import LogInController
 
 class LogInUI(tk.Frame):
     def __init__(self,master):
         tk.Frame.__init__(self,master)
+        self.logInController = LogInController()
         self.font = ('Times', 14)
         self.grid()
         self.loadInterface()
@@ -31,5 +33,4 @@ class LogInUI(tk.Frame):
     def loadButtons(self):
         login_btn = tk.Button(master=self,width=15, text='Login', font=self.font, 
                             relief=SOLID,cursor='hand2',command=None)
-        
         login_btn.grid(row=2, column=1, pady=10, padx=20)

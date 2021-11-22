@@ -13,6 +13,7 @@ class Game(StoreItem):
         self.__basePrice = basePrice
         self.__baseRentalPrice = rentalPrice
         self.__gameDescription = gameDescription
+        self.transition_to(releaseState)
 
     def transition_to(self, releaseState: Price):
         self.__releaseState = releaseState

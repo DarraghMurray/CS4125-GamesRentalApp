@@ -20,4 +20,7 @@ class AdminUser(User):
         DC.executeStatement(query, parameters)
 
     def BanUser(userID):
+        # query = "UPDATE user SET banned = 1 WHERE userID = %s"
+        # parameters = (userID)
+        # DC.executeStatement(query, parameters)
         pass

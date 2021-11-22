@@ -1,7 +1,7 @@
 
-
-
+#manages user access
 class UserControl:
-    
+
+    __user = None
     def __init__(self, user):
-        pass
+        self.__user = user
