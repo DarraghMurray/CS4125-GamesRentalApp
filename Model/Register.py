@@ -7,7 +7,7 @@ class Register:
 
     def checkEmail(self, email):
         query = "SELECT * FROM users WHERE Email = %s"
-        parameters = (email)
+        parameters = [email]
         result = DC.executeSelectStatement(query, parameters)
         if(len(result) == 0):
             return True
@@ -15,7 +15,7 @@ class Register:
 
     def checkUserName(self, username):
         query = "SELECT * FROM users WHERE Username = %s"
-        parameters = (username)
+        parameters = [username]
         result = DC.executeSelectStatement(query, parameters)
         if(len(result) == 0):
             return True
@@ -37,17 +37,12 @@ class Register:
             #no existing entries of that email
             if(self.checkUserName(username)):
                 #no existing entries of that username
-                pass
-
-                #registeredPassword = self.hashPassword(password)
-                #need a way to hash passwords
-                #no need for transaction this time as only one table inserted
-                # query = "INSERT INTO users(Email, Username, Password) VALUES (%s,%s,%s)"
-                # params = (email,username,registeredPassword)
-                # DC.executeStatement())
-            pass
-        pass
-
-reg = Register()
-
-reg.hashPassword("abcdedfdkgkgsld")
+                registeredPassword = self.hashPassword(password)
+                query = "INSERT INTO users(Email, Username, Password) VALUES (%s,%s,%s)"
+                params = [email,username,registeredPassword]
+                DC.executeStatement(query, params)
+                return True
+            else:
+                return False
+        else:
+            return False
