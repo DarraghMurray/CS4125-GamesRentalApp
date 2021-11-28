@@ -1,5 +1,8 @@
-from View.RegisterUI import RegisterUI
+from Model.Register import Register
 
 #manages registration
 class RegisterController:
-    pass
+    
+    def Register(self, email, username, password):
+        self.Register = Register()
+        self.Register.Registration(email, username, password)

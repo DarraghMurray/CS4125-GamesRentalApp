@@ -24,13 +24,16 @@ class LogInUI(tk.Frame):
         passwordLabel.grid(row=1, column=0, pady=10)
 
     def loadEntries(self):
-        email_tf = tk.Entry(master=self,font=self.font)
-        pwd_tf = tk.Entry(master=self,font=self.font,show='*')
+        self.email_tf = tk.Entry(master=self,font=self.font)
+        self.pwd_tf = tk.Entry(master=self,font=self.font,show='*')
         
-        email_tf.grid(row=0, column=1, pady=10, padx=20)
-        pwd_tf.grid(row=1, column=1, pady=10, padx=20)
+        self.email_tf.grid(row=0, column=1, pady=10, padx=20)
+        self.pwd_tf.grid(row=1, column=1, pady=10, padx=20)
 
     def loadButtons(self):
-        login_btn = tk.Button(master=self,width=15, text='Login', font=self.font, 
-                            relief=SOLID,cursor='hand2',command=None)
-        login_btn.grid(row=2, column=1, pady=10, padx=20)
+        self.login_btn = tk.Button(master=self,width=15, text='Login', font=self.font, 
+                            relief=SOLID,cursor='hand2',command=self.LogInBtn)
+        self.login_btn.grid(row=2, column=1, pady=10, padx=20)
+
+    def LogInBtn(self):
+        self.logInController.LogIn(self.email_tf.get(), self.pwd_tf.get())

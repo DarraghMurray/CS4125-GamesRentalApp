@@ -2,10 +2,12 @@
 import tkinter as tk
 from tkinter import font
 from tkinter.constants import SOLID, W
+from Controller.RegisterController import RegisterController
 
 class RegisterUI(tk.Frame):
     def __init__(self,master):
         tk.Frame.__init__(self,master)
+        self.registerController = RegisterController()
         self.font = ('Times', 14)
         self.grid()
         self.loadInterface()
@@ -25,16 +27,20 @@ class RegisterUI(tk.Frame):
         passwordLabel.grid(row=2, column=0, pady=10)
 
     def loadEntries(self):
-        email_tf = tk.Entry(master=self,font=self.font)
-        username_tf = tk.Entry(master=self,font=self.font)
-        pwd_tf = tk.Entry(master=self,font=self.font,show='*')
+        self.email_tf = tk.Entry(master=self,font=self.font)
+        self.username_tf = tk.Entry(master=self,font=self.font)
+        self.pwd_tf = tk.Entry(master=self,font=self.font,show='*')
         
-        email_tf.grid(row=0, column=1, pady=10, padx=20)
-        username_tf.grid(row=1, column=1, pady=10, padx=20)
-        pwd_tf.grid(row=2, column=1, pady=10, padx=20)
+        self.email_tf.grid(row=0, column=1, pady=10, padx=20)
+        self.username_tf.grid(row=1, column=1, pady=10, padx=20)
+        self.pwd_tf.grid(row=2, column=1, pady=10, padx=20)
 
     def loadButtons(self):
         register_btn = tk.Button(master=self,width=15, text='Register', font=self.font, 
-                            relief=SOLID,cursor='hand2',command=None)
+                            relief=SOLID,cursor='hand2',command=self.RegisterBtn)
         
         register_btn.grid(row=3, column=1, pady=10, padx=20)
+
+    def RegisterBtn(self):
+        self.registerController.Register(self.email_tf.get(), self.username_tf.get(),
+         self.pwd_tf.get())
