@@ -1,6 +1,7 @@
 from View.LogInUI import LogInUI
 from View.RegisterUI import RegisterUI
 from View.ItemPageUI import ItemPageUI
+from View.StoreUI import StoreUI
 
 class NavigationController():
 
@@ -9,18 +10,15 @@ class NavigationController():
         
     def navigateToRegistration(self):
         self.mainScreen.setCurrentFrame(RegisterUI)
-        self.mainScreen.loadScreen()
 
     def navigateToLogIn(self):
         self.mainScreen.setCurrentFrame(LogInUI)
-        self.mainScreen.loadScreen()
 
     def navigateToStore(self):
-        self.mainScreen.setCurrentFrame(ItemPageUI)
-        self.mainScreen.loadScreen()
+        self.mainScreen.setCurrentFrame(StoreUI)
 
     def navigateToLibrary(self):
-        pass
+        self.mainScreen.setCurrentFrame(StoreUI)
 
     def navigateToCart(self):
-        pass
+        self.mainScreen.setCurrentFrame(StoreUI)

@@ -10,8 +10,8 @@ class navbar(tk.Frame):
         self.buttonReg = tk.Button(self, text="register", command=self.goToRegister, borderwidth="0",fg="white", bg="dark gray")
         self.buttonLogIn = tk.Button(self, text="log-in", command=self.goToSignIn, borderwidth="0",fg="white", bg="dark gray")
         self.buttonStore = tk.Button(self, text="Store", command=self.goToStore, borderwidth="0",fg="white", bg="dark gray")
-        self.buttonLibrary = tk.Button(self, text="Games Library", borderwidth="0",fg="white", bg="dark gray")
-        self.buttonSettings = tk.Button(self, text="User Settings", borderwidth="0",fg="white", bg="dark gray")
+        self.buttonLibrary = tk.Button(self, text="Games Library", command=self.goToLibrary, borderwidth="0",fg="white", bg="dark gray")
+        self.buttonSettings = tk.Button(self, text="User Settings",command=self.goToCart, borderwidth="0",fg="white", bg="dark gray")
 
         self.buttonReg.grid()
         self.buttonLogIn.grid()
@@ -29,7 +29,7 @@ class navbar(tk.Frame):
         self.controller.navigateToStore()
 
     def goToLibrary(self):
-        pass
+        self.controller.navigateToLibrary()
 
-    def goToSettings(self):
-        pass
+    def goToCart(self):
+        self.controller.navigateToCart

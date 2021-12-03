@@ -1,6 +1,5 @@
 import tkinter as tk
 
-
 class ItemPageUI(tk.Frame):
 
     def __init__(self,master, item, controller):
