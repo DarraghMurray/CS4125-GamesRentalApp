@@ -8,7 +8,6 @@ class mainScreen(tk.Frame):
         self.switch_frame(LogInUI)
 
     def switch_frame(self,frame):
-        """Destroys current frame and replaces it with a new one."""
         new_frame = frame(self)
         if self._frame is not None:
             self._frame.destroy()

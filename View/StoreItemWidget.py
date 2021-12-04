@@ -1,21 +1,13 @@
 import tkinter as tk
 
+from View.ItemWidget import ItemWidget
+
 # add a product name text box and view button that takes to game store page
-class StoreItemWidget(tk.Frame):
+class StoreItemWidget(ItemWidget):
     def __init__(self, parent, game):
-        tk.Frame.__init__(self, parent)
+        super.__init__(self, parent, game)
+        self.viewGame = tk.Button(self, command=self.view_game)
+        self.viewGame.pack(side="right")
 
-        self.game = game
-        self.label = tk.Text(self, text=game.GetName(), anchor="w")
-
-        self.button = tk.Button(self, command=self.goToITemPage)
-
-        self.label.pack(side="top", fill="x")
-        self.entry.pack(side="bottom", fill="x", padx=4)
-
-    def get(self):
-        pass
-
-    def goToITemPage(self):
-        #go to item page ui with specified game data
+    def view_game(self):
         pass
