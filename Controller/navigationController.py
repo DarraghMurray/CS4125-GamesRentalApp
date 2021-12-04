@@ -9,16 +9,16 @@ class NavigationController():
         self.mainScreen = mainScreen
         
     def navigateToRegistration(self):
-        self.mainScreen.setCurrentFrame(RegisterUI)
+        self.mainScreen.switch_frame(RegisterUI)
 
     def navigateToLogIn(self):
-        self.mainScreen.setCurrentFrame(LogInUI)
+        self.mainScreen.switch_frame(LogInUI)
 
     def navigateToStore(self):
-        self.mainScreen.setCurrentFrame(StoreUI)
+        self.mainScreen.switch_frame(StoreUI)
 
     def navigateToLibrary(self):
-        self.mainScreen.setCurrentFrame(StoreUI)
+        self.mainScreen.switch_frame(StoreUI)
 
     def navigateToCart(self):
-        self.mainScreen.setCurrentFrame(StoreUI)
+        self.mainScreen.switch_frame(StoreUI)

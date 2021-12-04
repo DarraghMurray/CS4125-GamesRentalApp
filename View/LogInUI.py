@@ -37,3 +37,6 @@ class LogInUI(tk.Frame):
 
     def LogInBtn(self):
         self.logInController.LogIn(self.email_tf.get(), self.pwd_tf.get())
+    
+    def destroy(self) -> None:
+        return super().destroy()
