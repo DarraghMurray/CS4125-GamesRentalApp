@@ -10,15 +10,21 @@ class StoreItem(ABC):
     def parent(self, parent):
         self._parent = parent
 
-    def add(self, storeItem) -> None:
+    def add(self, storeitem) -> None:
+        #required as leaf of composite does not implement this method
         pass
 
-    def remove(self, storeItem) -> None:
+    def remove(self, storeitem) -> None:
+        #required as leaf of composite does not implement this method
         pass
 
     def is_composite(self) -> bool:
         return False
 
     @abstractmethod
-    def getPrice(self) -> str:
+    def getName(self) -> str:
+        pass
+
+    @abstractmethod
+    def getPrice(self) -> float:
         pass

@@ -1,6 +1,6 @@
 import tkinter as tk
 from View.navbar import navbar
-from View.mainScreen import mainScreen
+from View.mainScreen import MainScreen
 from Controller.navigationController import NavigationController
 
 class MainApplication(tk.Tk):
@@ -9,7 +9,7 @@ class MainApplication(tk.Tk):
         self.title("main")
         self.geometry("600x600")
         self.grid()
-        self.mainScreen = mainScreen(self)
+        self.mainScreen = MainScreen(self)
         self.navigator = NavigationController(self.mainScreen)
         self.navbar = navbar(self, self.navigator)
 

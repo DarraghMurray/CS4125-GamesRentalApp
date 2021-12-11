@@ -2,6 +2,8 @@
 #manages user access
 class UserControl:
 
-    __user = None
     def __init__(self, user):
         self.__user = user
+
+    def get_user_permission():
+        return 

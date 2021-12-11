@@ -5,8 +5,8 @@ from View.StoreUI import StoreUI
 
 class NavigationController():
 
-    def __init__(self, mainScreen):
-        self.mainScreen = mainScreen
+    def __init__(self, mainscreen):
+        self.mainScreen = mainscreen
         
     def navigateToRegistration(self):
         self.mainScreen.switch_frame(RegisterUI)

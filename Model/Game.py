@@ -15,8 +15,8 @@ class Game(StoreItem):
         self.__gameDescription = gameDescription
         self.transition_to(releaseState)
 
-    def transition_to(self, releaseState: Price):
-        self.__releaseState = releaseState
+    def transition_to(self, releasestate: Price):
+        self.__releaseState = releasestate
         self.__releaseState.context = self
 
     def getPrice(self) -> float:
@@ -24,3 +24,9 @@ class Game(StoreItem):
 
     def getRentalPrice(self) -> float:
         return self.__releaseState.getPrice(self.__baseRentalPrice)
+
+    def getName(self):
+        return self.__gameName
+    
+    def getGameDescription(self):
+        return self.__gameDescription

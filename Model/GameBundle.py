@@ -6,16 +6,22 @@ class GameBundle(StoreItem):
     def __init__(self):
         self._games: List[StoreItem] = []
 
-    def add(self, storeItem: StoreItem) -> None:
-        self._games.append(storeItem)
-        storeItem.parent = self
+    def add(self, storeitem: StoreItem) -> None:
+        self._games.append(storeitem)
+        storeitem.parent = self
 
-    def remove(self, storeItem: StoreItem) -> None:
-        self._children.remove(storeItem)
-        storeItem.parent = None
+    def remove(self, storeitem: StoreItem) -> None:
+        self._children.remove(storeitem)
+        storeitem.parent = None
 
     def is_composite(self) -> bool:
         return True
+        
+    def getName(self):
+        names: List[str] = []
+        for child in self._games:
+            names.append(child.getName())
+        return names
 
     def getPrice(self) -> float:
         total = 0

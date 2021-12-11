@@ -1,7 +1,7 @@
 class Rental:
-    def __init__(self, DaysRented, ItemRented):
-        self.__DaysRented = DaysRented
-        self.__ItemRented = ItemRented
+    def __init__(self, days_rented, item_rented):
+        self.__DaysRented = days_rented
+        self.__ItemRented = item_rented
 
     def getRentedGames(self):
         return self.__ItemRented

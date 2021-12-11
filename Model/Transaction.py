@@ -3,5 +3,6 @@ class Transaction():
         self.__date = date
         self.__amount = amount
 
-    def commitTransaction():
+    def commit_transaction(self):
+        #commits transaction to user account
         pass
