@@ -7,12 +7,10 @@ class User:
         self.__userid = userid
         self.__UserName = username
         self.__address = address
-        self.__creditCardInfo = ""
         self.__PassWord = password
         self.__Email = email
         self.__cart = Cart()
 
-    def addToCart(self, item):
+    def add_to_cart(self, item):
         self.__cart.AddToCart(item)
-        return
 

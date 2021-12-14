@@ -2,14 +2,17 @@ from CartInterface import CartInterface
 
 
 class Cart(CartInterface):
-    def __init__(self, itemNames ):
-        self.__itemNames = itemNames
+    def __init__(self):
+        return
 
     def UpdateCart(self):
         pass
 
     def AddToCart(self, item):
         self.__itemNames.append(item)
+        #query = "INSERT INTO cart(Gamename,Gameprice,Gamedescription) VALUES(%s,%s,%s"
+        #parameters = (item.getGameID())
+        #DC.executeStatement(query, parameters)
 
     def RemoveFromCart(self, item):
         if item in self.__itemNames:

@@ -5,7 +5,7 @@ from LibraryItemWidget import LibraryItemWidget
 
 class ItemWidgetFactory(ABC):
 
-    def createItemWidget(WidgetType):
+    def createItemWidget(self, WidgetType):
         
         itemWidget = None
 

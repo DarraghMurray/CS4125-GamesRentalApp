@@ -3,12 +3,12 @@ import hashlib, binascii
 
 class LogIn:
     
-    def GetData(self,email):
+    def get_data(self,email):
         query = "SELECT * FROM users WHERE Email = %s"
         parameters = [email]
         return DC.executeSelectStatement(query, parameters)
 
-    def VerifyPassword(self, actualPass, enteredPass):
+    def verify_password(self, actualPass, enteredPass):
         salt = actualPass[:64]
         actualPass = actualPass[64:]
         hashPassword = hashlib.pbkdf2_hmac('sha512', 
@@ -18,18 +18,18 @@ class LogIn:
         hashPassword = binascii.hexlify(hashPassword).decode('utf-8')
         return hashPassword == actualPass
 
-    def SignIn(self,email, password) -> bool:
-        UserInfo = self.GetData(email)
-        if(len(UserInfo) > 0):
-            UserID = UserInfo[0][0]
-            UserEmail = UserInfo[0][1]
-            UserPassword = UserInfo[0][2]
-            UserName = UserInfo[0][3]
-            UserType = UserInfo[0][4]
-            UserBanStatus = UserInfo[0][5]
+    def sign_in(self,email, password) -> bool:
+        user_info = self.get_data(email)
+        if(len(user_info) > 0):
+            UserID = user_info[0][0]
+            UserEmail = user_info[0][1]
+            UserPassword = user_info[0][2]
+            UserName = user_info[0][3]
+            UserType = user_info[0][4]
+            UserBanStatus = user_info[0][5]
 
             if(UserBanStatus == 0):
-                if(self.VerifyPassword(UserPassword, password)):
+                if(self.verify_password(UserPassword, password)):
                     print("signed in")
                     return True
                 else:

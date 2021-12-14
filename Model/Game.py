@@ -11,7 +11,6 @@ class Game(StoreItem):
         self.__gameID = gameID
         self.__gameName = gameName
         self.__basePrice = basePrice
-        self.__baseRentalPrice = rentalPrice
         self.__gameDescription = gameDescription
         self.transition_to(releaseState)
 
@@ -23,10 +22,13 @@ class Game(StoreItem):
         return self.__basePrice
 
     def getRentalPrice(self) -> float:
-        return self.__releaseState.getPrice(self.__baseRentalPrice)
+        return self.__releaseState.getPrice(self.__basePrice)
 
     def getName(self):
         return self.__gameName
     
     def getGameDescription(self):
         return self.__gameDescription
+
+    def getGameID(self):
+        return self.__gameID

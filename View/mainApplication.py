@@ -1,7 +1,7 @@
 import tkinter as tk
 from View.navbar import navbar
 from View.mainScreen import MainScreen
-from Controller.navigationController import NavigationController
+from Controller.navbarController import NavbarController
 
 class MainApplication(tk.Tk):
     def __init__(self):
@@ -10,8 +10,7 @@ class MainApplication(tk.Tk):
         self.geometry("600x600")
         self.grid()
         self.mainScreen = MainScreen(self)
-        self.navigator = NavigationController(self.mainScreen)
-        self.navbar = navbar(self, self.navigator)
+        self.navbar = navbar(self, NavbarController(self.mainScreen))
 
         self.grid_rowconfigure(0, weight=1)
         self.grid_columnconfigure(0, weight=1)

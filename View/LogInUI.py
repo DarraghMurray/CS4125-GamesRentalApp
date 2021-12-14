@@ -2,6 +2,7 @@
 import tkinter as tk
 from tkinter.constants import SOLID, W
 from Controller.LogInController import LogInController
+from View.RegisterUI import RegisterUI
 
 class LogInUI(tk.Frame):
     def __init__(self,master):
@@ -37,6 +38,7 @@ class LogInUI(tk.Frame):
 
     def LogInBtn(self):
         self.logInController.LogIn(self.email_tf.get(), self.pwd_tf.get())
+        self.master.switch_frame(RegisterUI)
     
     def destroy(self) -> None:
         return super().destroy()

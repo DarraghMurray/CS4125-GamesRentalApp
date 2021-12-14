@@ -1,5 +1,4 @@
 from Controller.UserControl import UserControl
-from Controller.UserControl import UserControl
 from Model.CartInterface import CartInterface
 
 #manages individual store item page

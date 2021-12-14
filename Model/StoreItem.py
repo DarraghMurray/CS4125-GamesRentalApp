@@ -12,11 +12,11 @@ class StoreItem(ABC):
 
     def add(self, storeitem) -> None:
         #required as leaf of composite does not implement this method
-        pass
+        return
 
     def remove(self, storeitem) -> None:
         #required as leaf of composite does not implement this method
-        pass
+        return
 
     def is_composite(self) -> bool:
         return False

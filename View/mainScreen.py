@@ -1,11 +1,13 @@
 import tkinter as tk
-from View.LogInUI import LogInUI
+from Controller.navbarController import NavbarController
 
 class MainScreen(tk.Frame):
     def __init__(self, master):
         tk.Frame.__init__(self,master,bg="black",width=500,height=master.winfo_screenheight())
+        self.navigator = NavbarController(self)
         self._frame = None
-        self.switch_frame(LogInUI)
+        #self.switch_frame(LogInUI)
+        self.navigator.navigate_to_login()
 
     def switch_frame(self,frame):
         new_frame = frame(self)

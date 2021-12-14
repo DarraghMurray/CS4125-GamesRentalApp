@@ -8,4 +8,4 @@ class LogInController:
         self.logIn = LogIn()
         print(email)
         print(password)
-        self.logIn.SignIn(email, password)
+        self.logIn.sign_in(email, password)
