@@ -28,8 +28,6 @@ class Register:
         hashPass = hashlib.pbkdf2_hmac('sha512', password.encode('utf-8'), salt, 100000)
         hashPass = binascii.hexlify(hashPass)
 
-        print((salt + hashPass))
-        print(len((salt+hashPass).decode('utf-8')))
         return (salt + hashPass).decode('utf-8')
 
     def Registration(self, email, username, password):

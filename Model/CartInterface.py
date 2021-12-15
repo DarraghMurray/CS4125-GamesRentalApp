@@ -13,3 +13,6 @@ class CartInterface(abc.ABC):
 
     def ClearCart(self):
         pass
+
+    def CheckOut(self):
+        pass

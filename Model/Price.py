@@ -9,5 +9,5 @@ class Prices(Enum):
 class Price(ABC):
 
     @abstractmethod
-    def GetPrice(self, base_rental):
+    def GetPrice(self, base_price):
         pass

@@ -10,3 +10,7 @@ class StoreUI(tk.Frame):
         self.canvas = tk.Canvas(self)
         self.scrollbar = ttk.Scrollbar(self, orient="vertical", command=self.canvas.yview)
         self.scrollable_frame = ttk.Frame(self.canvas)
+
+    def loadItemContainers(self):
+        #load containers in list format on page.
+        pass

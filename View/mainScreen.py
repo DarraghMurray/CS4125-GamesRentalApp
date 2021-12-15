@@ -6,7 +6,6 @@ class MainScreen(tk.Frame):
         tk.Frame.__init__(self,master,bg="black",width=500,height=master.winfo_screenheight())
         self.navigator = NavbarController(self)
         self._frame = None
-        #self.switch_frame(LogInUI)
         self.navigator.navigate_to_login()
 
     def switch_frame(self,frame):
@@ -14,3 +13,9 @@ class MainScreen(tk.Frame):
         if self._frame is not None:
             self._frame.destroy()
         self._frame = new_frame
+
+    def goToLogIn(self):
+        self.navigator.navigate_to_login()
+
+    def goToRegister(self):
+        self.navigator.navigate_to_registration()

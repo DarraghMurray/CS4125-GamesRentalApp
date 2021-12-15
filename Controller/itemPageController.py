@@ -4,9 +4,9 @@ from Model.CartInterface import CartInterface
 #manages individual store item page
 class ItemPageController:
 
-    def addToCart(item):
-        CartInterface.AddToCart(item)
+    def addToCart(self,item):
+        pass
 
-    def rentItem(item):
+    def rentItem(self,item):
         pass
     

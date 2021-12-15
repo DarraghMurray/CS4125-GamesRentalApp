@@ -2,6 +2,9 @@ from Model.Register import Register
 
 #manages registration
 class RegisterController:
+
+    def __init__(self, master) -> None:
+        self.master = master
     
     def register(self, email, username, password):
         self.Register = Register()

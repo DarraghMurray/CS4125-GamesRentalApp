@@ -10,7 +10,7 @@ class Cart(CartInterface):
 
     def AddToCart(self, item):
         self.__itemNames.append(item)
-        #query = "INSERT INTO cart(Gamename,Gameprice,Gamedescription) VALUES(%s,%s,%s"
+        #query = "INSERT INTO cart(GameID, UserID) VALUES(%s,%s,%s)"
         #parameters = (item.getGameID())
         #DC.executeStatement(query, parameters)
 
@@ -21,7 +21,7 @@ class Cart(CartInterface):
     def ClearCart(self):
         self.__itemNames.clear()
 
-    def ProceedToOrder(self):
+    def CheckOut(self):
         #calls appropriate methods to begin transaction
         #on successful purchase add to database games library
         pass

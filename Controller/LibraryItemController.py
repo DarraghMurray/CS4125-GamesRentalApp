@@ -2,5 +2,5 @@
 #manage individual library pages
 class LibraryItemController:
 
-    def launch():
+    def launch(self):
         pass

@@ -8,15 +8,15 @@ class LogIn:
         parameters = [email]
         return DC.executeSelectStatement(query, parameters)
 
-    def verify_password(self, actualPass, enteredPass):
-        salt = actualPass[:64]
-        actualPass = actualPass[64:]
-        hashPassword = hashlib.pbkdf2_hmac('sha512', 
-                                    enteredPass.encode('utf-8'), 
+    def verify_password(self, actual_pass, entered_pass):
+        salt = actual_pass[:64]
+        actual_pass = actual_pass[64:]
+        hash_password = hashlib.pbkdf2_hmac('sha512', 
+                                    entered_pass.encode('utf-8'), 
                                     salt.encode('utf-8'), 
                                     100000)
-        hashPassword = binascii.hexlify(hashPassword).decode('utf-8')
-        return hashPassword == actualPass
+        hash_password = binascii.hexlify(hash_password).decode('utf-8')
+        return hash_password == actual_pass
 
     def sign_in(self,email, password) -> bool:
         user_info = self.get_data(email)

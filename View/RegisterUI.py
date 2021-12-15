@@ -3,12 +3,11 @@ import tkinter as tk
 from tkinter import font
 from tkinter.constants import SOLID, W
 from Controller.RegisterController import RegisterController
-from View.LogInUI import LogInUI
 
 class RegisterUI(tk.Frame):
     def __init__(self,master):
         tk.Frame.__init__(self,master)
-        self.registerController = RegisterController()
+        self.registerController = RegisterController(master)
         self.font = ('Times', 14)
         self.grid()
         self.loadInterface()
@@ -43,6 +42,6 @@ class RegisterUI(tk.Frame):
         register_btn.grid(row=3, column=1, pady=10, padx=20)
 
     def RegisterBtn(self):
-        self.registerController.Register(self.email_tf.get(), self.username_tf.get(),
+        self.registerController.register(self.email_tf.get(), self.username_tf.get(),
          self.pwd_tf.get())
-        self.master.switch_frame(LogInUI)
+        self.master.goToLogIn()
